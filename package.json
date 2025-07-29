@@ -1,0 +1,38 @@
+{
+  "name": "telemetry-service",
+  "version": "3.3.0",
+  "main": "app.js",
+  "author": "sunbird",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov ./node_modules/mocha/bin/mocha 'test/**/*.js'  --reporter mochawesome --exit",
+    "test-with-coverage": "nyc --reporter=html --reporter=text --reporter=lcov ./node_modules/mocha/bin/mocha 'test/**/*.js'  --reporter mochawesome --exit && cat ./coverage/lcov.info | codacy-coverage"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-cluster": "0.0.5",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "kafka-node": "~2.6.1",
+    "lodash": "^4.17.10",
+    "morgan": "~1.9.0",
+    "mysql": "^2.18.1",
+    "pg": "^8.14.1",
+    "request": "2.87.0",
+    "uuid": "~3.2.1",
+    "winston": "^3.17.0",
+    "winston-cassandra": "~0.4.0",
+    "winston-daily-rotate-file": "~3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "codacy-coverage": "3.0.0",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.3",
+    "nyc": "^12.0.2",
+    "sinon": "^6.1.5"
+  }
+}
